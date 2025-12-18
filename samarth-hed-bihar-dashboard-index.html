@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SAMARTH | HED Bihar Dashboard (Yearly 2025)</title>
+  <style>
+    :root {
+      --primary: #4f5bd5;
+      --secondary: #6a7cff;
+      --bg: #f4f6ff;
+      --card: #ffffff;
+      --success: #28a745;
+      --info: #17a2b8;
+      --warning: #ffc107;
+      --text: #1f2937;
+    }
+
+    * { box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+    body { margin: 0; background: var(--bg); color: var(--text); }
+
+    /* Header */
+    .header {
+      background: linear-gradient(135deg, #2c3e70, #4f5bd5);
+      color: white;
+      padding: 40px;
+      border-radius: 0 0 24px 24px;
+    }
+    .header h1 { margin: 0; font-size: 40px; }
+    .header h2 { margin-top: 8px; font-weight: 400; }
+    .pill {
+      display: inline-block;
+      margin-top: 16px;
+      background: rgba(255,255,255,0.2);
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-size: 14px;
+    }
+
+    /* KPI Cards */
+    .kpi-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 30px 40px;
+    }
+    .kpi {
+      background: var(--card);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    }
+    .kpi h3 { margin: 0; font-size: 36px; color: var(--primary); }
+    .kpi p { margin-top: 8px; color: #555; }
+
+    /* Tabs */
+    .tabs {
+      display: flex;
+      gap: 12px;
+      padding: 0 40px;
+    }
+    .tab {
+      padding: 10px 18px;
+      border-radius: 12px;
+      background: #e7e9ff;
+      cursor: pointer;
+      font-weight: 500;
+    }
+    .tab.active {
+      background: var(--primary);
+      color: white;
+    }
+
+    /* Sections */
+    .section {
+      padding: 30px 40px;
+      display: none;
+    }
+    .section.active { display: block; }
+
+    /* Progress bars */
+    .progress-item { margin-bottom: 22px; }
+    .progress-item span { font-weight: 500; }
+    .progress {
+      background: #e5e7eb;
+      height: 12px;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-top: 6px;
+    }
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--secondary), var(--primary));
+    }
+
+    /* University Cards */
+    .uni-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .uni-card {
+      background: var(--card);
+      padding: 22px;
+      border-radius: 16px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.05);
+    }
+    .badge {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      margin: 4px 4px 0 0;
+    }
+    .green { background: #d4edda; color: #155724; }
+    .blue { background: #d1ecf1; color: #0c5460; }
+
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="header">
+    <h1>SAMARTH</h1>
+    <h2>Higher Education Department – Bihar</h2>
+    <div class="pill">Implementation Report | Yearly 2025</div>
+  </div>
+
+  <!-- KPI CARDS -->
+  <div class="kpi-container">
+    <div class="kpi"><h3>15</h3><p>State Universities</p></div>
+    <div class="kpi"><h3>7</h3><p>Payroll Module Active</p></div>
+    <div class="kpi"><h3>500+</h3><p>Colleges Onboarded</p></div>
+    <div class="kpi"><h3>77K+</h3><p>Admissions Processed</p></div>
+  </div>
+
+  <!-- TABS -->
+  <div class="tabs">
+    <div class="tab active" onclick="showTab('overview')">Overview</div>
+    <div class="tab" onclick="showTab('payroll')">Payroll</div>
+    <div class="tab" onclick="showTab('admissions')">Admissions</div>
+    <div class="tab" onclick="showTab('advanced')">Advanced Modules</div>
+  </div>
+
+  <!-- OVERVIEW -->
+  <div id="overview" class="section active">
+    <h2>Module Implementation Status</h2>
+
+    <div class="progress-item">
+      <span>Base & Employee Management – 100%</span>
+      <div class="progress"><div class="progress-fill" style="width:100%"></div></div>
+    </div>
+
+    <div class="progress-item">
+      <span>Payroll Management – 47% (7/15 Universities)</span>
+      <div class="progress"><div class="progress-fill" style="width:47%"></div></div>
+    </div>
+
+    <div class="progress-item">
+      <span>Constituent College Onboarding – 500+ Colleges</span>
+      <div class="progress"><div class="progress-fill" style="width:85%"></div></div>
+    </div>
+  </div>
+
+  <!-- PAYROLL -->
+  <div id="payroll" class="section">
+    <h2>University Progress – Payroll</h2>
+    <div class="uni-grid">
+      <div class="uni-card">
+        <h3>Purnea University</h3>
+        <span class="badge green">Payroll Active</span>
+        <span class="badge blue">42 Colleges</span>
+        <p>First university with live admissions.</p>
+      </div>
+      <div class="uni-card">
+        <h3>Aryabhatta Knowledge University</h3>
+        <span class="badge green">Payroll Active</span>
+        <span class="badge blue">74 Colleges</span>
+      </div>
+      <div class="uni-card">
+        <h3>Patliputra University</h3>
+        <span class="badge green">Payroll Active</span>
+        <span class="badge blue">128 Colleges</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ADMISSIONS -->
+  <div id="admissions" class="section">
+    <h2>Admissions Module Status</h2>
+    <p>Purnea University is live for UG & PG admissions via SAMARTH.</p>
+  </div>
+
+  <!-- ADVANCED MODULES -->
+  <div id="advanced" class="section">
+    <h2>Advanced Modules</h2>
+    <ul>
+      <li>Leave Management – In Progress</li>
+      <li>Pension Module – Started</li>
+      <li>RTI & Grievance – Walkthrough Completed</li>
+      <li>CFMS Integration – Under Discussion</li>
+    </ul>
+  </div>
+
+  <script>
+    function showTab(tabId) {
+      document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+      event.target.classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
